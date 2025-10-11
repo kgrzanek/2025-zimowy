@@ -2,6 +2,7 @@
 package edu.san.patterns;
 
 // Zadanie. Doprowadź do sytuacji, w której będzie istniał co najwyżej 1 obiekt poniższej klasy.
+// Wzorzec: Singleton
 public final class TheOnlyOne implements Cloneable {
 
   private static class Holder {
