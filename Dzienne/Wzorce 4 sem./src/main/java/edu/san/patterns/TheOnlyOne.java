@@ -14,7 +14,7 @@ public final class TheOnlyOne implements Cloneable {
   }
 
   private TheOnlyOne() {
-    System.out.println("TheOnlyOne::TheOnlyOne()");
+    IO.println("TheOnlyOne::TheOnlyOne()");
   }
 
   @SuppressWarnings("static-method")
