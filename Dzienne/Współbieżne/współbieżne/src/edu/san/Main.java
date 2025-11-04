@@ -16,14 +16,16 @@ public class Main {
     n = 0;
     for (var i = 0; i < 100; i++) {
       pool.execute(() -> {
-        n++;
+        for (int j = 0; j < 1_000; j++) {
+          n++;
+        }
       });
     }
 
     pool.shutdown();
 
     Threads.sleep(Duration.of(3, ChronoUnit.SECONDS));
-    System.out.println("n = " + n);
+    IO.println("n = " + n);
   }
 
 }

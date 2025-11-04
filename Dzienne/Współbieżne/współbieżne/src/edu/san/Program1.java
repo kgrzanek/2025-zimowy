@@ -8,7 +8,7 @@ public class Program1 {
 
   static long n;
 
-  static Semaphore s = new Semaphore(1, false);
+  static final Semaphore s = new Semaphore(1, false);
 
   public static void main(String[] args) {
     n = 0;
