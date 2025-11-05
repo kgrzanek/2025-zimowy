@@ -1,17 +1,20 @@
 // © 2025 Konrad Grzanek <kongra@gmail.com>
 package edu.san.greeting.entity;
 
-import java.util.UUID;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Version;
 
 @Entity
+@IdClass(GreetingPK.class)
 public class Greeting {
 
   @Id
-  private UUID id;
+  private long pk1;
+
+  @Id
+  private long pk2;
 
   @Version
   private long version;
@@ -42,10 +45,6 @@ public class Greeting {
 
   public void setText(String text) {
     this.text = text;
-  }
-
-  public UUID getId() {
-    return id;
   }
 
 }
