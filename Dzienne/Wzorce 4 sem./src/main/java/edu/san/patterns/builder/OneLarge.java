@@ -3,11 +3,16 @@ package edu.san.patterns.builder;
 
 import java.util.UUID;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
-@Data
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
 @Builder
+@ToString
 public class OneLarge {
 
   private final UUID uuid;

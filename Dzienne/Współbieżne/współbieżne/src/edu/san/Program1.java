@@ -8,7 +8,7 @@ public class Program1 {
 
   static long n;
 
-  static final Semaphore s = new Semaphore(1, false);
+  static final Semaphore s = new Semaphore(1, true);
 
   public static void main(String[] args) {
     n = 0;
@@ -18,21 +18,21 @@ public class Program1 {
     for (var i = 0; i < 100; i++) {
       final var thread = new Thread(() -> {
         for (var j = 0; j < 10_000; j++) {
-//          Threads.run(s::acquire);
-//          try {
-//            // n++;
-//            long n1 = n;
-//            long n2 = n1 + 1;
-//            n = n2;
-//          } finally {
-//            s.release();
-//          }
-
-          Threads.acquiring(s, () -> {
-            final var n1 = n;
-            final var n2 = n1 + 1;
+          Threads.run(s::acquire);
+          try {
+            // n++;
+            long n1 = n;
+            long n2 = n1 + 1;
             n = n2;
-          });
+          } finally {
+            s.release();
+          }
+
+//          Threads.acquiring(s, () -> {
+//            final var n1 = n;
+//            final var n2 = n1 + 1;
+//            n = n2;
+//          });
 
         }
       });

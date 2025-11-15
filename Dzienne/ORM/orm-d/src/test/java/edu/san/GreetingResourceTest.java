@@ -3,6 +3,8 @@ package edu.san;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
+import edu.san.greeting.entity.Greeting;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -11,6 +13,9 @@ class GreetingResourceTest {
 
   @Test
   void testHelloEndpoint() {
+    var greeting1 = new Greeting();
+    IO.println(greeting1.getText());
+
     given()
         .when().get("/hello")
         .then()

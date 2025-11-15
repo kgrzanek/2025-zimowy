@@ -8,7 +8,8 @@ public class Program0 {
   static long n;
 
   public static void main(String[] args) {
-    n = 0;
+    IO.println("Program0::main, n=" + n);
+
     final var threads = new ArrayList<Thread>();
 
     final var start = System.currentTimeMillis();
@@ -23,10 +24,14 @@ public class Program0 {
       });
 
       threads.add(thread);
+    }
+
+    for (Thread thread : threads) {
       thread.start();
     }
 
     Threads.joinAll(threads);
+
     System.out.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
