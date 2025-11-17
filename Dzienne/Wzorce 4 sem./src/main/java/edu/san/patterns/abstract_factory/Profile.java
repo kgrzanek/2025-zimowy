@@ -5,7 +5,8 @@ import java.util.Objects;
 
 record Profile(ProfileId profileId, Email email) {
 
-  static <T> Profile of(ProfileIdFactory<T> profileIdFactory, T arg, Email email) {
+  static <T> Profile of(ProfileIdFactory<T> profileIdFactory, T arg,
+      Email email) {
     return new Profile(profileIdFactory.createProfileId(arg), email);
   }
 

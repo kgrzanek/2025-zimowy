@@ -16,19 +16,24 @@ public class Program6 {
     final var n = new AtomicLong(0L);
 
     final var thread1 = new Thread(() -> {
+      IO.println("thread1.start()");
       while (isRunning) {
         n.incrementAndGet();
       }
+      IO.println("thread1 ends");
     });
 
     threads.add(thread1);
     thread1.start();
 
-    final var thread2 = new Thread(() -> {
-      Threads.sleep(1000L);
-      isRunning = false;
-    });
+//    final var thread2 = new Thread(() -> {
+//      IO.println("thread2.sleep(2000L)");
+//      Threads.sleep(2000L);
+//      isRunning = false;
+//      IO.println("thread2 ends");
+//    });
 
+    var thread2 = Program61.test1();
     threads.add(thread2);
     thread2.start();
 

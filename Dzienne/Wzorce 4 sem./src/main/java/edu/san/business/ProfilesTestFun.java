@@ -16,7 +16,7 @@ public class ProfilesTestFun {
   }
 
   public static void main(String[] args) throws IllegalArgumentException {
-    Function<String, Profile> profileConstructor = null;
+    final Function<String, Profile> profileConstructor = null;
 
     final var profile = createProfileWithEmail(
         profileConstructor,

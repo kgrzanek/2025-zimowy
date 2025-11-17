@@ -6,13 +6,13 @@ public class Program5 {
   public static void main(String[] args) {
     System.out.println("main starts");
 
-    final var obj = new Object();
+    final var monitor = new Object();
 
     final var t1 = new Thread(() -> {
       System.out.println("t1 starts");
-      synchronized (obj) {
-        System.out.println("t1 calls obj.wait()");
-        Threads.run(obj::wait);
+      synchronized (monitor) {
+        System.out.println("t1 calls monitor.wait()");
+        Threads.run(monitor::wait);
       }
       System.out.println("t1 ends");
     });
@@ -21,9 +21,9 @@ public class Program5 {
 
     Threads.sleep(1000);
 
-    synchronized (obj) {
-      System.out.println("main calls obj.notify()");
-      obj.notify();
+    synchronized (monitor) {
+      System.out.println("main calls monitor.notify()");
+      monitor.notify();
     }
 
     Threads.run(t1::join);

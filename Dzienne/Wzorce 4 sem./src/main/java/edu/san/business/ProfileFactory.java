@@ -3,8 +3,8 @@ package edu.san.business;
 
 public interface ProfileFactory {
 
-  public Profile createProfile();
+  Profile createProfile();
 
-  public Profile createProfileWithEmail(String email);
+  Profile createProfileWithEmail(String email);
 
 }

@@ -20,7 +20,7 @@ public class OptionalTest {
   }
 
   public static void main(String[] args) {
-    Optional<String> something = Optional.ofNullable(null);
+    final Optional<String> something = Optional.ofNullable(null);
     IO.println(something);
     IO.println(safeDiv(4, 0));
 

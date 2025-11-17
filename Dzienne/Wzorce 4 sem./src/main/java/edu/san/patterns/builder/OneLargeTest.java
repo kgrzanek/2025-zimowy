@@ -4,10 +4,10 @@ package edu.san.patterns.builder;
 public class OneLargeTest {
 
   public static void main(String[] args) {
-    var oneLarge = OneLarge.builder()
-      .city("Łódź")
-      .petName("Azorek")
-      .build();
+    final var oneLarge = OneLarge.builder()
+        .city("Łódź")
+        .petName("Azorek")
+        .build();
 
     IO.println(oneLarge);
   }

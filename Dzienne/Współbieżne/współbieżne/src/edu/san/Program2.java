@@ -34,7 +34,5 @@ public class Program2 {
     System.out.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
-    // * RACE CONDITION(S)
-
   }
 }

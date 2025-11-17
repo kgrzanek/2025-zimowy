@@ -3,8 +3,8 @@ package edu.san.patterns.factory_method;
 
 interface TestComplex {
 
-  public static void main(String... args) {
-    var z = Complex.of(1, 2);
+  static void main(String... args) {
+    final var z = Complex.of(1, 2);
     IO.println(z);
   }
 
