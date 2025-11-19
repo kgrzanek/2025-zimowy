@@ -18,6 +18,15 @@ public class MyEntity extends AbstractEnityWithId<Long, MyEntity> {
 
   private String field;
 
+  public MyEntity() {
+    super();
+  }
+
+  public MyEntity(String field) {
+    super();
+    this.field = field;
+  }
+
   @Override
   public Long getId() {
     return id;
@@ -29,6 +38,14 @@ public class MyEntity extends AbstractEnityWithId<Long, MyEntity> {
 
   public void setField(String field) {
     this.field = field;
+  }
+
+  public short getVersion() {
+    return version;
+  }
+
+  public void setVersion(short version) {
+    this.version = version;
   }
 
 }
