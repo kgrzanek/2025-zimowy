@@ -1,7 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.ArrayList;
+import module java.base;
 
 public class Program0 {
 
@@ -26,13 +26,13 @@ public class Program0 {
       threads.add(thread);
     }
 
-    for (Thread thread : threads) {
+    for (final Thread thread : threads) {
       thread.start();
     }
 
     Threads.joinAll(threads);
 
-    System.out.println("Finished with n = " + n + " in " +
+    IO.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
     // * RACE CONDITION(S)

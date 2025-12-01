@@ -1,7 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.function.Supplier;
+import module java.base;
 
 public class Program11 {
 
@@ -32,13 +32,13 @@ public class Program11 {
 
     final var t1 = Threads.startNew(() -> holder1.set(() -> {
       final var t2 = Threads
-          .startNew(() -> System.out.println(holder1.value()));
+          .startNew(() -> IO.println(holder1.value()));
       Threads.run(t2::join);
       return "bbb";
     }));
 
     Threads.run(t1::join);
-    System.out.println("Done");
+    IO.println("Done");
   }
 
 }

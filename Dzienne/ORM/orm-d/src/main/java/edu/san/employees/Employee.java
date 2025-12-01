@@ -2,10 +2,12 @@
 package edu.san.employees;
 
 import java.util.Set;
+import java.util.UUID;
 
 import edu.san.adresses.Address;
 import edu.san.jpa.utils.AbstractEnityWithId;
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -18,16 +20,16 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Version;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-// @DiscriminatorColumn(name = "employee_type")
-public abstract class Employee extends AbstractEnityWithId<Long, Employee> {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "employee_type")
+public abstract class Employee extends AbstractEnityWithId<UUID, Employee> {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
-  private Long id;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
 
   @Version
-  private short version;
+  private long version;
 
   @Column(unique = true)
   private String email;
@@ -43,15 +45,15 @@ public abstract class Employee extends AbstractEnityWithId<Long, Employee> {
   private Set<Address> additionalAddresses;
 
   @Override
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public short getVersion() {
+  public long getVersion() {
     return version;
   }
 
-  public void setVersion(short version) {
+  public void setVersion(long version) {
     this.version = version;
   }
 

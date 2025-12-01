@@ -19,11 +19,9 @@ public class MyEntity extends AbstractEnityWithId<Long, MyEntity> {
   private String field;
 
   public MyEntity() {
-    super();
   }
 
   public MyEntity(String field) {
-    super();
     this.field = field;
   }
 

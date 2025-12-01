@@ -1,9 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.time.Duration;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.Lock;
+import module java.base;
 
 public final class Threads {
 

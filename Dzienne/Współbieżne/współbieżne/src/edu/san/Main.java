@@ -1,10 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import module java.base;
 
 public class Main {
 
@@ -16,7 +13,7 @@ public class Main {
     n = 0;
     for (var i = 0; i < 100; i++) {
       pool.execute(() -> {
-        for (int j = 0; j < 1_000; j++) {
+        for (var j = 0; j < 1_000; j++) {
           n++;
         }
       });

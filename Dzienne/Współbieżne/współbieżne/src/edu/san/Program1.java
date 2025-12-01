@@ -1,8 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.ArrayList;
-import java.util.concurrent.Semaphore;
+import module java.base;
 
 public class Program1 {
 
@@ -21,8 +20,8 @@ public class Program1 {
           Threads.run(s::acquire);
           try {
             // n++;
-            long n1 = n;
-            long n2 = n1 + 1;
+            final var n1 = n;
+            final var n2 = n1 + 1;
             n = n2;
           } finally {
             s.release();
@@ -42,7 +41,7 @@ public class Program1 {
     }
 
     Threads.joinAll(threads);
-    System.out.println("Finished with n = " + n + " in " +
+    IO.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
     // * RACE CONDITION(S)

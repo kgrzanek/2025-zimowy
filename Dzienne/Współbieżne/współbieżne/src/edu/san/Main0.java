@@ -4,8 +4,8 @@ package edu.san;
 public class Main0 {
 
   public static void main(String[] args) {
-    var cores = Runtime.getRuntime().availableProcessors();
-    System.out.println("Available processors: " + cores);
+    final var cores = Runtime.getRuntime().availableProcessors();
+    IO.println("Available processors: " + cores);
 
     final var t1 = new Thread(() -> {
       IO.println("t1 goes to sleep");
@@ -28,11 +28,11 @@ public class Main0 {
     // Threads.run(t1::join);
 
     Threads.sleep(1_000);
-    System.out.println("main t1.interrupt()");
+    IO.println("main t1.interrupt()");
     t1.interrupt();
     Threads.run(t1::join);
 
-    System.out.println("main ends");
+    IO.println("main ends");
   }
 
 }

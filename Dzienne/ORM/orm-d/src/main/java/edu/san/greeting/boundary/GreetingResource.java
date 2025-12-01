@@ -1,8 +1,12 @@
 package edu.san.greeting.boundary;
 
 import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.util.UUID;
 
 import edu.san.MyEntity;
+import edu.san.employees.Administrator;
+import edu.san.employees.AdministratorRole;
 import io.smallrye.common.annotation.RunOnVirtualThread;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
@@ -18,16 +22,27 @@ public class GreetingResource {
 
   GreetingResource() {}
 
+  @SuppressWarnings("static-access")
   @GET
   @Produces(MediaType.TEXT_PLAIN)
   @Transactional
   @RunOnVirtualThread
   public String hello() {
-    MyEntity myEntity = new MyEntity("Test-1");
+    final var myEntity = new MyEntity("Test-1");
     myEntity.persist();
-    // myEntity.setField("Test-1");
+    myEntity.setField("Test-1");
     // myEntity.flush();
     // myEntity.delete();
+
+    final var employee = new Administrator();
+    employee.setEmail("kgrzanek@san.edu.pl");
+    employee.setRole(AdministratorRole.MANAGER);
+    employee.persist();
+
+    // var id = employee.getId();
+    var foundEmployee = (Administrator) Administrator.findById(UUID.randomUUID());
+
+    LOG.log(Level.INFO, String.valueOf(foundEmployee));
 
     return "Hello from Quarkus REST, id: " + myEntity.getId() + ", version: "
         + myEntity.getVersion();

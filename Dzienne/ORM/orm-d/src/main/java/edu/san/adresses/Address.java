@@ -6,6 +6,7 @@ import java.util.UUID;
 import edu.san.jpa.utils.AbstractEnityWithId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Version;
 
@@ -13,7 +14,7 @@ import jakarta.persistence.Version;
 public class Address extends AbstractEnityWithId<UUID, Address> {
 
   @Id
-  @GeneratedValue(generator = "UUID")
+  @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
   @Version

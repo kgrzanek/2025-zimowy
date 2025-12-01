@@ -1,7 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.ArrayList;
+import module java.base;
 
 public class Program2 {
 
@@ -31,7 +31,7 @@ public class Program2 {
     }
 
     Threads.joinAll(threads);
-    System.out.println("Finished with n = " + n + " in " +
+    IO.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
   }

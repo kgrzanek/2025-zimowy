@@ -55,7 +55,7 @@ class TheOnlyOneTest {
 
     // Constructor should only be called once
     final var output = outputStream.toString();
-    System.out.println("--1" + output);
+    IO.println("--1" + output);
 
     final var count = output.split("TheOnlyOne::TheOnlyOne\\(\\)", -1).length
         - 1;

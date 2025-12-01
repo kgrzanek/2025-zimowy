@@ -1,7 +1,7 @@
 // © 2024 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.Stack;
+import module java.base;
 
 public final class DynVar<T> implements AutoCloseable {
 

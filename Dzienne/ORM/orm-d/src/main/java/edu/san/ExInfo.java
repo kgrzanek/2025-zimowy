@@ -4,7 +4,6 @@ package edu.san;
 public class ExInfo extends RuntimeException {
 
   public ExInfo() {
-    super();
   }
 
   public ExInfo(String message, Throwable cause, boolean enableSuppression,

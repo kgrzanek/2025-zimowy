@@ -26,11 +26,11 @@ public class Program10 {
 
     final var t1 = Threads.startNew(() -> holder1.set("aaa"));
 
-    final var t2 = Threads.startNew(() -> System.out.println(holder1.value()));
+    final var t2 = Threads.startNew(() -> IO.println(holder1.value()));
 
     Threads.run(t1::join);
     Threads.run(t2::join);
-    System.out.println("Done");
+    IO.println("Done");
   }
 
 }

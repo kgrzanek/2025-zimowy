@@ -52,5 +52,4 @@ public class ObservableIntArray {
     return Arrays.toString(array);
   }
 
-
 }

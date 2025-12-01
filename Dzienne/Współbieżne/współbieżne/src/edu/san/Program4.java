@@ -1,8 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
+import module java.base;
 
 public class Program4 {
 
@@ -25,7 +24,7 @@ public class Program4 {
     }
 
     Threads.joinAll(threads);
-    System.out.println("Finished with n = " + n.get() + " in " +
+    IO.println("Finished with n = " + n.get() + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
   }
 }

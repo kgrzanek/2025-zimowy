@@ -1,8 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
+import module java.base;
 
 public class Program6 {
 
@@ -33,12 +32,12 @@ public class Program6 {
 //      IO.println("thread2 ends");
 //    });
 
-    var thread2 = Program61.test1();
+    final var thread2 = Program61.test1();
     threads.add(thread2);
     thread2.start();
 
     Threads.joinAll(threads);
-    System.out.println("Finished with n = " + n.get() + " in " +
+    IO.println("Finished with n = " + n.get() + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
   }

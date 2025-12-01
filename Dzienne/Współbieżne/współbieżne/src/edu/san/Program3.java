@@ -1,8 +1,7 @@
 // © 2023 Konrad Grzanek <kongra@gmail.com>
 package edu.san;
 
-import java.util.ArrayList;
-import java.util.concurrent.locks.ReentrantLock;
+import module java.base;
 
 public class Program3 {
 
@@ -42,7 +41,7 @@ public class Program3 {
     }
 
     Threads.joinAll(threads);
-    System.out.println("Finished with n = " + n + " in " +
+    IO.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
   }
 }
