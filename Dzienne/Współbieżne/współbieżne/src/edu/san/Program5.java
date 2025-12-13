@@ -23,7 +23,7 @@ public class Program5 {
 
     synchronized (monitor) {
       IO.println("main calls monitor.notify()");
-      monitor.notify();
+      monitor.notifyAll();
     }
 
     Threads.run(t1::join);
