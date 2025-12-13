@@ -88,13 +88,13 @@ public abstract class Employee extends AbstractEnityWithId<UUID, Employee> {
   public void setMainAddress(Address mainAddress) {
     this.mainAddress = mainAddress;
   }
-
-  public Set<Address> getAdditionalAddresses() {
-    return additionalAddresses;
-  }
-
-  public void setAdditionalAddresses(Set<Address> additionalAddresses) {
-    this.additionalAddresses = additionalAddresses;
-  }
+//
+//  public Set<Address> getAdditionalAddresses() {
+//    return additionalAddresses;
+//  }
+//
+//  public void setAdditionalAddresses(Set<Address> additionalAddresses) {
+//    this.additionalAddresses = additionalAddresses;
+//  }
 
 }

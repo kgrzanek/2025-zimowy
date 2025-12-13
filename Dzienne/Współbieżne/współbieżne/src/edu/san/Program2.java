@@ -7,7 +7,7 @@ public class Program2 {
 
   static long n;
 
-  static Object obj = new Object();
+  static final Object obj = new Object();
 
   public static void main(String[] args) {
     n = 0L;
@@ -34,5 +34,18 @@ public class Program2 {
     IO.println("Finished with n = " + n + " in " +
         (System.currentTimeMillis() - start) + " msecs.");
 
+    foo(5);
+
   }
+
+  static void foo(int i) {
+    synchronized (obj) {
+      if (i == 0)
+        return;
+
+      IO.println("foo(" + i + ")");
+      foo(i-1);
+    }
+  }
+
 }

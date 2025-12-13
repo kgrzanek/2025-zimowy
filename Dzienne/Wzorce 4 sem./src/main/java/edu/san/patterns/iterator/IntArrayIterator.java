@@ -2,6 +2,7 @@
 package edu.san.patterns.iterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public final class IntArrayIterator implements Iterator<Integer> {
@@ -26,6 +27,8 @@ public final class IntArrayIterator implements Iterator<Integer> {
 
   @Override
   public Integer next() {
+    if (i == array.length)
+      throw new NoSuchElementException();
     return array[i++];
   }
 

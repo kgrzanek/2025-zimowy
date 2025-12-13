@@ -39,6 +39,7 @@ public class ObservableIntArray {
     if (oldValue != newValue) {
       array[i] = newValue;
       notifyObservers(i, oldValue, newValue);
+      return newValue;
     }
     return oldValue;
   }
