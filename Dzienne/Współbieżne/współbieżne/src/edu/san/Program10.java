@@ -7,8 +7,14 @@ public class Program10 {
 
     private T value;
 
-    synchronized void set(T value) {
-      this.value = value;
+//    synchronized void set(T value) {
+//      this.value = value;
+//    }
+
+    void set(T value) {
+      synchronized (this) {
+        this.value = value;
+      }
     }
 
     synchronized T value() {
