@@ -5,6 +5,7 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class ProductFolderRepository implements PanacheRepository<ProductFolder> {
+public class ProductFolderRepository
+    implements PanacheRepository<ProductFolder> {
 
 }

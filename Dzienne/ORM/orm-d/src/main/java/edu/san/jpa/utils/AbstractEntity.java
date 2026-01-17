@@ -21,7 +21,7 @@ public abstract class AbstractEntity<I, T extends AbstractEntity<I, T>> {
 
     @SuppressWarnings("unchecked")
     final var other = (T) obj;
-    return getId().equals(other.getId());
+    return Objects.equals(getId(), other.getId());
   }
 
 }

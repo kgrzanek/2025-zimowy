@@ -1,0 +1,15 @@
+01. Na czym polega współbieżność  (ang. concurrency) i jakie są jej zastosowania?
+02. Na czym polega zrównoleglenie (ang. parallelism) i jakie są jego zastosowania?
+03. Wyjaśnij pojęcia: zadanie, wątek, proces.
+04. W jaki sposób jądro systemu operacyjnego przydziela procesory do zadań?
+05. Co to jest race condition(s)?
+06. Co to jest sekcja krytyczna?
+07. Opisz działanie sprawiedliwego i niesprawiedliwego binarnego semafora.
+08. Jakie znasz mechanizmy pozwalające na tworzenie sekcji krytycznych?
+09. Jakie jest działanie bloku synchronized w języku Java lub C#?
+10. Co to są monitory i do czego służą?
+11. Co to znaczy, że monitor jest re-entrant w odróżnieniu od semafora, który tej właściwości nie posiada?
+12. Opisz problem czytelników i pisarzy i przedstaw w formie opisowej propozycję jego rozwiązania.
+13. Opisz problem 5 filozofów i przedstaw w formie opisowej propozycję jego rozwiązania.
+14. Na czym polega synchroniczne i asynchroniczne wywoływanie procedur?
+15. Jaki znasz metody implementacji asynchronicznego wywoływania procedur w wybranym języku programowania?

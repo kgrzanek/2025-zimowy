@@ -5,7 +5,7 @@ import java.lang.System.Logger.Level;
 import java.util.UUID;
 
 import edu.san.MyEntity;
-import edu.san.adresses.Address;
+import edu.san.addresses.Address;
 import edu.san.employees.Administrator;
 import edu.san.employees.AdministratorRole;
 import io.smallrye.common.annotation.RunOnVirtualThread;
@@ -32,15 +32,13 @@ public class GreetingResource {
     final var myEntity = new MyEntity("Test-1");
     myEntity.persist();
     myEntity.setField("Test-1");
-    // myEntity.flush();
-    // myEntity.delete();
 
     final var employee = new Administrator();
     employee.setEmail("kgrzanek@san.edu.pl");
     employee.setRole(AdministratorRole.MANAGER);
     employee.persist();
 
-    var address = new Address();
+    final var address = new Address();
     address.setCountry("Poland");
     address.setStreet("Piotrkowska");
     address.persist();
@@ -49,8 +47,8 @@ public class GreetingResource {
 
     LOG.log(Level.INFO, employee.getMainAddress());
 
-    // var id = employee.getId();
-    var foundEmployee = (Administrator) Administrator.findById(UUID.randomUUID());
+    final var foundEmployee = (Administrator) Administrator
+        .findById(UUID.randomUUID());
 
     LOG.log(Level.INFO, String.valueOf(foundEmployee));
 

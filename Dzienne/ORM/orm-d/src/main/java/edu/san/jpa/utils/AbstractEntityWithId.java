@@ -5,7 +5,7 @@ import java.util.Objects;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-public abstract class AbstractEnityWithId<I, T extends AbstractEnityWithId<I, T>>
+public abstract class AbstractEntityWithId<I, T extends AbstractEntityWithId<I, T>>
     extends PanacheEntityBase {
 
   public abstract I getId();
@@ -24,7 +24,7 @@ public abstract class AbstractEnityWithId<I, T extends AbstractEnityWithId<I, T>
 
     @SuppressWarnings("unchecked")
     final var other = (T) obj;
-    return getId().equals(other.getId());
+    return Objects.equals(getId(), other.getId());
   }
 
 }

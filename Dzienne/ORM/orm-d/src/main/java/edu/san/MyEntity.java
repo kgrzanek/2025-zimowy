@@ -1,13 +1,13 @@
 package edu.san;
 
-import edu.san.jpa.utils.AbstractEnityWithId;
+import edu.san.jpa.utils.AbstractEntityWithId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Version;
 
 @Entity
-public class MyEntity extends AbstractEnityWithId<Long, MyEntity> {
+public class MyEntity extends AbstractEntityWithId<Long, MyEntity> {
 
   @Id
   @GeneratedValue
@@ -18,8 +18,7 @@ public class MyEntity extends AbstractEnityWithId<Long, MyEntity> {
 
   private String field;
 
-  public MyEntity() {
-  }
+  public MyEntity() {}
 
   public MyEntity(String field) {
     this.field = field;

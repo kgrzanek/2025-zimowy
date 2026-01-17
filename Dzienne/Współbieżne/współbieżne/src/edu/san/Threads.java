@@ -5,6 +5,8 @@ import module java.base;
 
 public final class Threads {
 
+  private final static Random rnd = new SecureRandom();
+
   @FunctionalInterface
   public interface ThrowingRunnable {
 
@@ -71,6 +73,10 @@ public final class Threads {
     final var t = new Thread(body);
     t.start();
     return t;
+  }
+
+  public static long randomMillis(long bound) {
+    return rnd.nextLong(bound);
   }
 
   private Threads() {}

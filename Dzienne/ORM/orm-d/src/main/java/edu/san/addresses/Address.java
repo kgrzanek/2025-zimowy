@@ -1,9 +1,9 @@
 // © 2024 Konrad Grzanek <kongra@gmail.com>
-package edu.san.adresses;
+package edu.san.addresses;
 
 import java.util.UUID;
 
-import edu.san.jpa.utils.AbstractEnityWithId;
+import edu.san.jpa.utils.AbstractEntityWithId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Version;
 
 @Entity
-public class Address extends AbstractEnityWithId<UUID, Address> {
+public class Address extends AbstractEntityWithId<UUID, Address> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)

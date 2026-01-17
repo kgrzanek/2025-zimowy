@@ -4,8 +4,8 @@ package edu.san.employees;
 import java.util.Set;
 import java.util.UUID;
 
-import edu.san.adresses.Address;
-import edu.san.jpa.utils.AbstractEnityWithId;
+import edu.san.addresses.Address;
+import edu.san.jpa.utils.AbstractEntityWithId;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
@@ -22,7 +22,7 @@ import jakarta.persistence.Version;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "employee_type")
-public abstract class Employee extends AbstractEnityWithId<UUID, Employee> {
+public abstract class Employee extends AbstractEntityWithId<UUID, Employee> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -88,13 +88,13 @@ public abstract class Employee extends AbstractEnityWithId<UUID, Employee> {
   public void setMainAddress(Address mainAddress) {
     this.mainAddress = mainAddress;
   }
-//
-//  public Set<Address> getAdditionalAddresses() {
-//    return additionalAddresses;
-//  }
-//
-//  public void setAdditionalAddresses(Set<Address> additionalAddresses) {
-//    this.additionalAddresses = additionalAddresses;
-//  }
+
+  public Set<Address> getAdditionalAddresses() {
+    return additionalAddresses;
+  }
+
+  public void setAdditionalAddresses(Set<Address> additionalAddresses) {
+    this.additionalAddresses = additionalAddresses;
+  }
 
 }

@@ -3,8 +3,7 @@ package edu.san;
 
 public class ExInfo extends RuntimeException {
 
-  public ExInfo() {
-  }
+  public ExInfo() {}
 
   public ExInfo(String message, Throwable cause, boolean enableSuppression,
       boolean writableStackTrace) {

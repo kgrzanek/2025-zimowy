@@ -23,7 +23,6 @@ public class CommerceController {
       ProductFolderRepository productFolderRepository,
       ProductRepository productRepository,
       SKURepository skuRepository) {
-    super();
     this.productFolderRepository = productFolderRepository;
     this.productRepository = productRepository;
     this.skuRepository = skuRepository;

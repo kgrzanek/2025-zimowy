@@ -5,6 +5,4 @@ import java.util.UUID;
 
 record ProductByIdQuery(UUID id) {
 
-
-
 }

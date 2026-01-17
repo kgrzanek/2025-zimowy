@@ -1,0 +1,10 @@
+01. Co to jest wzorzec projektowy?
+02. Opisz wzorzec Singleton.
+03. Jak można zrealizować odroczenie ewaluacji jakiegoś wyrażenia, np. tworzenia obiektu singletona?
+04. Opisz wzorzec Abstract Factory.
+05. Opisz wzorzec Factory Method.
+06. Opisz zasady COTS.
+07. Opisz wzorzec Builder. Do czego on służy?
+08. Kim był i co wniósł do inżynierii oprogramowania Christopher Alexander?
+09. Czy w programach współbieżnych można korzystać ze wzorców rozwiązujących problemy wielowątkowości?
+10. Czy wzorce projektowe są wystarczające do tego, aby oprogramowanie miało wysoką jakość? Odpowiedź uzasadnij.
